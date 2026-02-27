@@ -38,15 +38,15 @@ const SearchJobs = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Search Header */}
-                <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 mb-8">
+                <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 mb-8">
                     <div className="flex flex-col md:flex-row gap-4">
-                        <div className="flex-1 flex items-center px-4 py-2 bg-slate-50 rounded-xl border border-slate-100 group focus-within:border-primary-300 transition-colors">
+                        <div className="flex-1 flex items-center px-4 py-2 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group focus-within:border-primary-300 transition-colors">
                             <Search className="w-5 h-5 text-slate-400 mr-2" />
-                            <input type="text" placeholder="Job title, keywords..." className="bg-transparent w-full focus:outline-none text-sm font-medium" />
+                            <input type="text" placeholder="Job title, keywords..." className="bg-transparent w-full focus:outline-none text-sm font-medium text-slate-900 dark:text-white placeholder:text-slate-400" />
                         </div>
-                        <div className="flex-1 flex items-center px-4 py-2 bg-slate-50 rounded-xl border border-slate-100 group focus-within:border-primary-300 transition-colors">
+                        <div className="flex-1 flex items-center px-4 py-2 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group focus-within:border-primary-300 transition-colors">
                             <MapPin className="w-5 h-5 text-slate-400 mr-2" />
-                            <input type="text" placeholder="Location..." className="bg-transparent w-full focus:outline-none text-sm font-medium" />
+                            <input type="text" placeholder="Location..." className="bg-transparent w-full focus:outline-none text-sm font-medium text-slate-900 dark:text-white placeholder:text-slate-400" />
                         </div>
                         <button className="bg-primary-600 text-white px-8 py-2 rounded-xl font-bold hover:bg-primary-700 transition-all">
                             Search

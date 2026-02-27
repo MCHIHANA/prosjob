@@ -76,8 +76,7 @@ const Home = () => {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
-                        <span className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-bold tracking-wide uppercase mb-6 animate-fade-in">
-                            <Zap className="w-4 h-4 fill-primary-600" />
+                        <span className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-bold tracking-wide uppercase mb-6 animate-fade-in">
                             Join the future of work
                         </span>
                         <h1 className="text-5xl sm:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">
@@ -91,13 +90,13 @@ const Home = () => {
 
                         {/* Global Search Bar */}
                         <div className="max-w-4xl mx-auto">
-                            <div className="bg-white p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl shadow-slate-200/60 border border-slate-100 flex flex-col sm:flex-row gap-2">
-                                <div className="flex-1 flex items-center px-6 py-3 border-b sm:border-b-0 sm:border-r border-slate-100 group">
+                            <div className="bg-white dark:bg-slate-900 p-2 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl shadow-slate-200/60 dark:shadow-none border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row gap-2">
+                                <div className="flex-1 flex items-center px-6 py-3 border-b sm:border-b-0 sm:border-r border-slate-100 dark:border-slate-800 group">
                                     <Search className="w-5 h-5 text-slate-400 mr-3 group-focus-within:text-primary-600 transition-colors" />
                                     <input
                                         type="text"
                                         placeholder="Search titles, skills, or companies..."
-                                        className="w-full focus:outline-none text-slate-900 placeholder:text-slate-400 font-medium"
+                                        className="w-full focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 font-medium bg-transparent"
                                     />
                                 </div>
                                 <div className="flex-1 flex items-center px-6 py-3 group">
@@ -105,7 +104,7 @@ const Home = () => {
                                     <input
                                         type="text"
                                         placeholder="Preferred location..."
-                                        className="w-full focus:outline-none text-slate-900 placeholder:text-slate-400 font-medium"
+                                        className="w-full focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 font-medium bg-transparent"
                                     />
                                 </div>
                                 <button className="bg-primary-600 text-white px-10 py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-primary-700 transition-all shadow-lg shadow-primary-200 active:scale-95">
