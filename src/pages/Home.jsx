@@ -3,53 +3,7 @@ import Navbar from '../components/Navbar';
 import JobCard from '../components/JobCard';
 import { Search, MapPin, Briefcase, TrendingUp, Users, Zap, Building2, Terminal, Code2, Database, Palette } from 'lucide-react';
 import Footer from '../components/Footer';
-
-const mockJobs = [
-    {
-        id: 1,
-        title: "Senior Product Designer",
-        company: "DesignCo",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=DesignCo",
-        location: "San Francisco, CA",
-        salary: "$140k - $180k",
-        type: "Full-time",
-        posted: "2 hours ago",
-        tags: ["Product", "Figma", "UI/UX"]
-    },
-    {
-        id: 2,
-        title: "Full Stack Engineer",
-        company: "TechFlow",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=TechFlow",
-        location: "Remote",
-        salary: "$120k - $160k",
-        type: "Remote",
-        posted: "5 hours ago",
-        tags: ["React", "Node.js", "Postgres"]
-    },
-    {
-        id: 3,
-        title: "Backend Developer (Go)",
-        company: "Systemic",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=Systemic",
-        location: "New York, NY",
-        salary: "$130k - $170k",
-        type: "On-site",
-        posted: "1 day ago",
-        tags: ["Golang", "AWS", "Docker"]
-    },
-    {
-        id: 4,
-        title: "Marketing Manager",
-        company: "GrowthLab",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=GrowthLab",
-        location: "Austin, TX",
-        salary: "$90k - $120k",
-        type: "Hybrid",
-        posted: "3 hours ago",
-        tags: ["SEO", "AdWords", "Content"]
-    }
-];
+import { useJobContext } from '../context/JobContext';
 
 const categories = [
     { icon: Code2, name: "Engineering", count: "1,240 Jobs", color: "blue" },
@@ -60,9 +14,10 @@ const categories = [
     { icon: Database, name: "Data Science", count: "290 Jobs", color: "cyan" }
 ];
 
-
-
 const Home = () => {
+    const { jobs } = useJobContext();
+    const featuredJobs = jobs.slice(0, 4);
+
     return (
         <div className="min-h-screen bg-slate-50/50">
             <Navbar />
@@ -159,7 +114,7 @@ const Home = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {mockJobs.map(job => (
+                        {featuredJobs.map(job => (
                             <JobCard key={job.id} job={job} />
                         ))}
                     </div>

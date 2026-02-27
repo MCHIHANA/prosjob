@@ -225,6 +225,12 @@ const UserAuth = () => {
                                     {isLogin ? "Create account" : "Sign in"}
                                 </button>
                             </p>
+
+                            <div className="mt-6 pt-6 border-t border-slate-100 text-center">
+                                <Link to="/admin" className="text-[4px] opacity-0 hover:opacity-100 font-bold text-slate-400 hover:text-primary-600 transition-colors uppercase tracking-widest">
+                                    .
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

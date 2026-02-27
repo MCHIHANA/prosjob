@@ -2,34 +2,10 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import JobCard from '../components/JobCard';
 import { Search, MapPin, Filter, X, ChevronDown } from 'lucide-react';
-
-const mockJobs = [
-    {
-        id: 1,
-        title: "Senior Product Designer",
-        company: "DesignCo",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=DesignCo",
-        location: "San Francisco, CA",
-        salary: "$140k - $180k",
-        type: "Full-time",
-        posted: "2 hours ago",
-        tags: ["Product", "Figma", "UI/UX"]
-    },
-    {
-        id: 2,
-        title: "Full Stack Engineer",
-        company: "TechFlow",
-        logo: "https://api.dicebear.com/7.x/identicon/svg?seed=TechFlow",
-        location: "Remote",
-        salary: "$120k - $160k",
-        type: "Remote",
-        posted: "5 hours ago",
-        tags: ["React", "Node.js", "Postgres"]
-    },
-    // ... more jobs could be added
-];
+import { useJobContext } from '../context/JobContext';
 
 const SearchJobs = () => {
+    const { jobs } = useJobContext();
     const [showFilters, setShowFilters] = useState(false);
 
     return (
@@ -78,17 +54,7 @@ const SearchJobs = () => {
                             </div>
                         </div>
 
-                        <div>
-                            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Salary Range</h3>
-                            <div className="space-y-3 font-medium text-slate-600">
-                                {['$0 - $50k', '$50k - $100k', '$100k - $150k', '$150k+'].map(range => (
-                                    <label key={range} className="flex items-center gap-3 cursor-pointer group">
-                                        <input type="radio" name="salary" className="w-4 h-4 border-slate-300 text-primary-600 focus:ring-primary-500" />
-                                        <span className="text-sm group-hover:text-primary-600 transition-colors">{range}</span>
-                                    </label>
-                                ))}
-                            </div>
-                        </div>
+
                     </aside>
 
                     {/* Results Area */}
@@ -99,19 +65,14 @@ const SearchJobs = () => {
                                 Sort by:
                                 <select className="bg-transparent text-slate-900 font-bold focus:outline-none cursor-pointer">
                                     <option>Newest</option>
-                                    <option>Salary (High to Low)</option>
                                     <option>Relevance</option>
                                 </select>
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 gap-4">
-                            {mockJobs.map(job => (
+                            {jobs.map(job => (
                                 <JobCard key={job.id} job={job} />
-                            ))}
-                            {/* Duplicate for demo */}
-                            {mockJobs.map(job => (
-                                <JobCard key={`${job.id}-2`} job={{ ...job, id: job.id + 10 }} />
                             ))}
                         </div>
                     </main>

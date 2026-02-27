@@ -8,7 +8,7 @@ const AdminAuth = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Admin login logic
-        navigate('/');
+        navigate('/admin/dashboard');
     };
 
     return (
