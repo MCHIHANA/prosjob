@@ -1,7 +1,5 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import JobCard from '../components/JobCard';
 import { Search, MapPin, Briefcase, TrendingUp, Users, Zap, Building2, Terminal, Code2, Database } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const mockJobs = [
     {
@@ -167,62 +165,33 @@ const Home = () => {
             </section>
 
             {/* Newsletter */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto bg-slate-900 rounded-[3rem] p-8 sm:p-16 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-[100px] -mr-48 -mt-48"></div>
-                    <div className="relative z-10 lg:flex items-center justify-between gap-12">
-                        <div className="max-w-xl mb-10 lg:mb-0 text-center lg:text-left">
-                            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-                                Don't miss the next big thing. <br />
-                                <span className="text-primary-400">Join our weekly newsletter.</span>
-                            </h2>
-                            <p className="text-slate-400 text-lg mb-0 italic">
-                                Only the best jobs, once a week. No spam, ever.
-                            </p>
-                        </div>
-                        <div className="flex-1 max-w-md mx-auto lg:mr-0">
-                            <div className="flex p-1.5 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-md">
-                                <input
-                                    type="email"
-                                    placeholder="name@company.com"
-                                    className="flex-1 bg-transparent border-none focus:outline-none px-6 text-white placeholder:text-slate-500"
-                                />
-                                <button className="bg-primary-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-400 transition-colors shadow-lg shadow-primary-500/20">
-                                    Subscribe
-                                </button>
-                            </div>
+            <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <div className="bg-slate-900 rounded-3xl p-6 sm:p-10 relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary-600/20 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+                    <div className="relative z-10 sm:w-1/2 text-center sm:text-left">
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight">
+                            Join our weekly newsletter
+                        </h2>
+                        <p className="text-slate-400 text-sm">
+                            Only the best jobs, once a week. No spam.
+                        </p>
+                    </div>
+                    <div className="relative z-10 sm:w-1/2 w-full max-w-md mx-auto sm:mx-0">
+                        <div className="flex p-1 bg-white/10 rounded-xl border border-white/10 backdrop-blur-md">
+                            <input
+                                type="email"
+                                placeholder="name@company.com"
+                                className="flex-1 bg-transparent border-none focus:outline-none px-4 text-sm text-white placeholder:text-slate-500 w-full"
+                            />
+                            <button className="bg-primary-500 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-primary-400 transition-colors shadow-lg shadow-primary-500/20 whitespace-nowrap">
+                                Subscribe
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <footer className="py-12 border-t border-slate-200 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-                    <div className="sm:flex items-center justify-between gap-8 mb-8">
-                        <div className="flex items-center justify-center sm:justify-start gap-2 mb-6 sm:mb-0">
-                            <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
-                                <Briefcase className="text-white w-4 h-4" />
-                            </div>
-                            <span className="text-xl font-bold text-slate-900">Prosjob</span>
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-8 text-sm font-semibold text-slate-500">
-                            <a href="#" className="hover:text-primary-600">About</a>
-                            <a href="#" className="hover:text-primary-600">Privacy</a>
-                            <a href="#" className="hover:text-primary-600">Terms</a>
-                            <a href="#" className="hover:text-primary-600">GitHub</a>
-                            <a href="#" className="hover:text-primary-600">Twitter</a>
-                        </div>
-                    </div>
-                    <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
-                        <p>&copy; 2026 Prosjob Inc. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <a href="#">Security</a>
-                            <a href="#">Status</a>
-                            <a href="#">Cookies</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };
