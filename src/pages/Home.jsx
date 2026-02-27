@@ -1,4 +1,7 @@
-import { Search, MapPin, Briefcase, TrendingUp, Users, Zap, Building2, Terminal, Code2, Database } from 'lucide-react';
+import React from 'react';
+import Navbar from '../components/Navbar';
+import JobCard from '../components/JobCard';
+import { Search, MapPin, Briefcase, TrendingUp, Users, Zap, Building2, Terminal, Code2, Database, Palette } from 'lucide-react';
 import Footer from '../components/Footer';
 
 const mockJobs = [
@@ -57,7 +60,7 @@ const categories = [
     { icon: Database, name: "Data Science", count: "290 Jobs", color: "cyan" }
 ];
 
-import { Palette } from 'lucide-react';
+
 
 const Home = () => {
     return (
